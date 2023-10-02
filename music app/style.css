@@ -1,0 +1,141 @@
+html {box-sizing: border-box;}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+}
+
+.background img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-width: 50%;
+    min-height: 50%;
+    filter: blur(15px);
+    -webkit-filter: blur(50px);
+    transform: scale(1.1);
+}
+
+.container {
+    background-color: rgb(228, 228, 228);
+    width: 400px;
+    height: 550px;
+    border-radius: 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+}
+
+.container:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+    transition: all 0.5s ease;
+}
+
+.player-img {
+    width: 300px; /* Le decimos como de grande será el container de nuestra img, para luego ponerla al 100% */
+    height: 300px;
+    position: relative;
+    top: -50px;
+    left: 50px;
+}
+
+.player-img img {
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.3);
+}
+
+.player-img img:hover {
+    box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.5);
+}
+
+.player-img img.active {
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+    opacity: 1;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    margin: 5px 0 0;
+}
+
+h3 {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    margin: 10px 0 0;
+}
+
+.player-progress {
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 40px 20px 35px;
+    height: 6px;
+    width: 90%;
+}
+
+.progress {
+    background-color: black;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+    /* le decimos width 0% para que no se vea la barra de normal, solo cuando esté reproduciendo la música */
+}
+
+.music-duration {
+    position: relative;
+    top: -25px;
+    display: flex;
+    justify-content: space-between; /* para que el tiempo de inicio y fin quede separado */
+}
+
+.player-controls {
+    position: relative;
+    top: -15px;
+    left: 120px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-solid {
+    font-size: 30px;
+    color: #666;
+    margin-right: 30px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.fa-solid:hover {
+    filter: brightness(50%);
+}
+
+.play-button {
+    font-size: 45px;
+    position: relative;
+}
